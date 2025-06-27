@@ -68,29 +68,29 @@
       ctx.fillRect(star.x, star.y, 2, 2);
     });
 
-    fallingStars.forEach(star => {
-      star.x += star.speedX;
-      star.y += star.speedY;
-    
-      // Track distance traveled
-      star.distanceTraveled += Math.sqrt(star.speedX ** 2 + star.speedY ** 2);
-    
-      // Calculate fade-out when distance exceeds 30% of the diagonal
-      const fadeThreshold = Math.sqrt(canvas.width ** 2 + canvas.height ** 2) * 0.3;
-    
-      if (star.distanceTraveled > fadeThreshold) {
-        star.opacity -= 0.02; // Smooth fade-out
-      }
-
-      ctx.beginPath();
-      ctx.moveTo(star.x, star.y);
-      ctx.lineTo(star.x - 10, star.y - 10);
-      ctx.strokeStyle = `rgba(255, 255, 255, ${star.opacity})`;
-      ctx.stroke();
-    });
-
-    // Remove stars that are fully transparent or off-canvas
-    fallingStars = fallingStars.filter(star => star.opacity > 0 && star.x > -20 && star.y < canvas.height + 20);
+  fallingStars.forEach(star => {
+    star.x += star.speedX; // Move left
+    star.y += star.speedY; // Move down
+  
+    // Track distance traveled
+    star.distanceTraveled += Math.sqrt(star.speedX ** 2 + star.speedY ** 2);
+  
+    // Fade out after 30% of canvas diagonal distance
+    const fadeThreshold = Math.sqrt(canvas.width ** 2 + canvas.height ** 2) * 0.3;
+  
+    if (star.distanceTraveled > fadeThreshold) {
+      star.opacity -= 0.02;
+    }
+  
+    ctx.beginPath();
+    ctx.moveTo(star.x, star.y);
+    ctx.lineTo(star.x - 10, star.y - 10);
+    ctx.strokeStyle = `rgba(255, 255, 255, ${star.opacity})`;
+    ctx.stroke();
+  });
+  
+  // Remove stars that are fully transparent or off-canvas
+  fallingStars = fallingStars.filter(star => star.opacity > 0 && star.x > -20 && star.y < canvas.height + 20);
 
     radioWaves.forEach(wave => {
       ctx.beginPath();
@@ -109,10 +109,10 @@
   setInterval(() => {
     if (isAnimating) {
       fallingStars.push({
-        x: Math.random() * canvas.width,
-        y: 0,
-        speedX: -2, // Leftward speed
-        speedY: 4,  // Downward speed
+        x: canvas.width + 20, // Start just off the right edge
+        y: Math.random() * canvas.height, // Random vertical start position
+        speedX: -4, // Move left
+        speedY: 2,  // Move slightly down
         distanceTraveled: 0,
         opacity: 1
       });
