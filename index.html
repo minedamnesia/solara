@@ -31,14 +31,20 @@
 </head>
 <body>
 
-<div id="radio-widget-container">
+<div id="radio-widget-container" style="
+    position: relative;
+    width: 50vw;  /* 1/2 width of viewport */
+    height: 50vh; /* 1/2 height of viewport */
+    overflow: hidden;
+    border: 2px solid white; /* Optional: adds visual boundary */
+">
   <canvas id="radioCanvas"></canvas>
   <button id="toggleAnimation" style="
       position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
+      top: 10px;
+      right: 10px;
+      padding: 8px 16px;
+      font-size: 14px;
       background-color: #fff;
       border: none;
       cursor: pointer;
