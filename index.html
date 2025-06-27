@@ -25,11 +25,13 @@
 <body>
 
   <div id="radio-widget-container" style="
-    position: relative;
-    width: 40vw;
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    border: 2px solid white;">
+      position: relative;
+      width: min(300px, 40vw);
+      max-width: 300px;
+      max-height: 450px; /* 2:3 ratio of 300px width */
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      border: 2px solid white;">
 
   <canvas id="radioCanvas"></canvas>
   <button id="toggleAnimation" style="
