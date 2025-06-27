@@ -71,13 +71,26 @@
     fallingStars.forEach(star => {
       star.x += star.speedX;
       star.y += star.speedY;
+    
+      // Track distance traveled
+      star.distanceTraveled += Math.sqrt(star.speedX ** 2 + star.speedY ** 2);
+    
+      // Calculate fade-out when distance exceeds 30% of the diagonal
+      const fadeThreshold = Math.sqrt(canvas.width ** 2 + canvas.height ** 2) * 0.3;
+    
+      if (star.distanceTraveled > fadeThreshold) {
+        star.opacity -= 0.02; // Smooth fade-out
+      }
+
       ctx.beginPath();
       ctx.moveTo(star.x, star.y);
       ctx.lineTo(star.x - 10, star.y - 10);
-      ctx.strokeStyle = 'white';
+      ctx.strokeStyle = `rgba(255, 255, 255, ${star.opacity})`;
       ctx.stroke();
     });
-    fallingStars = fallingStars.filter(star => star.x > -10 && star.y < canvas.height + 10);
+
+    // Remove stars that are fully transparent or off-canvas
+    fallingStars = fallingStars.filter(star => star.opacity > 0 && star.x > -20 && star.y < canvas.height + 20);
 
     radioWaves.forEach(wave => {
       ctx.beginPath();
@@ -95,9 +108,17 @@
   // Falling stars interval
   setInterval(() => {
     if (isAnimating) {
-      fallingStars.push({ x: Math.random() * canvas.width, y: 0, speedX: -3, speedY: 5 });
+      fallingStars.push({
+        x: Math.random() * canvas.width,
+        y: 0,
+        speedX: -2, // Leftward speed
+        speedY: 4,  // Downward speed
+        distanceTraveled: 0,
+        opacity: 1
+      });
     }
   }, 1000);
+
 
   // Radio waves + random beep with fade-out
   setInterval(() => {
