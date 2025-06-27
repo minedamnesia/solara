@@ -5,7 +5,7 @@
   const toggleButton = document.getElementById('toggleAnimation');
 
   // Create Mute/Unmute button
-  const muteButton = document.createElement('button');
+  const muteButton = document.getElementById('muteButton');
   muteButton.textContent = 'Mute';
   muteButton.style = `
     position: absolute;
