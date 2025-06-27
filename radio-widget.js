@@ -24,7 +24,7 @@
   canvas.height = container.offsetHeight;
 
   const backgroundImage = new Image();
-  backgroundImage.src = '/mnt/data/20250521_1327_Radio Contact with ISS_remix_01jvt8cvb6ebka9mz4270mkt12.png';
+  backgroundImage.src = 'solara_radio.png';
 
   // Audio context for fade control
   const audioContext = new (window.AudioContext || window.webkitAudioContext)();
