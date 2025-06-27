@@ -62,11 +62,29 @@
     ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = 'white';
+
     stars.forEach(star => {
-      star.y += star.speed;
-      if (star.y > canvas.height) star.y = 0;
-      ctx.fillRect(star.x, star.y, 2, 2);
-    });
+      star.x -= star.speed; // Move left
+      star.y += star.speed; // Move down
+    
+      // Recycle star if it moves off canvas
+      if (star.x < 0 || star.y > canvas.height) {
+        star.x = canvas.width + Math.random() * 50; // Start slightly off-screen right
+        star.y = Math.random() * canvas.height;
+      }
+
+  ctx.fillRect(star.x, star.y, 2, 2);
+});
+
+  // Recycle star if it moves off canvas
+  if (star.x < 0 || star.y > canvas.height) {
+    star.x = canvas.width + Math.random() * 50; // Start slightly off-screen right
+    star.y = Math.random() * canvas.height;
+  }
+
+  ctx.fillRect(star.x, star.y, 2, 2);
+});
+
 
   fallingStars.forEach(star => {
     star.x += star.speedX; // Move left
