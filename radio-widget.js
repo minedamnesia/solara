@@ -163,7 +163,14 @@
     muteButton.textContent = isMuted ? 'Unmute' : 'Mute';
   });
 
-  backgroundImage.onload = () => requestAnimationFrame(animate);
+  backgroundImage.onload = () => {
+  console.log('Image loaded successfully.');
+  requestAnimationFrame(animate);
+};
+
+backgroundImage.onerror = () => {
+  console.error('Failed to load image. Check file name and GitHub path.');
+};
 
   window.addEventListener('resize', () => {
     canvas.width = container.offsetWidth;
