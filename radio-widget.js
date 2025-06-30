@@ -76,16 +76,6 @@
   ctx.fillRect(star.x, star.y, 2, 2);
 });
 
-  // Recycle star if it moves off canvas
-  if (star.x < 0 || star.y > canvas.height) {
-    star.x = canvas.width + Math.random() * 50; // Start slightly off-screen right
-    star.y = Math.random() * canvas.height;
-  }
-
-  ctx.fillRect(star.x, star.y, 2, 2);
-});
-
-
   fallingStars.forEach(star => {
     star.x += star.speedX; // Move left
     star.y += star.speedY; // Move down
