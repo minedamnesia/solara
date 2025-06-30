@@ -16,17 +16,6 @@
   // Create Mute/Unmute button
   const muteButton = document.getElementById('muteButton');
   muteButton.textContent = 'Mute';
-  muteButton.style = `
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
-  `;
   container.appendChild(muteButton);
 
   canvas.width = container.offsetWidth;
