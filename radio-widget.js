@@ -5,6 +5,14 @@
   const toggleButton = document.getElementById('toggleAnimation');
   let audioContext = null; // Don't create it immediately
 
+  // ✅ Move this to the top level, outside of any other function:
+  function preloadBeepBuffers() {
+    Promise.all(beepFiles.map(loadAudioBuffer)).then(buffers => {
+      beepBuffers = buffers;
+    });
+  }
+
+
   // Create Mute/Unmute button
   const muteButton = document.getElementById('muteButton');
   muteButton.textContent = 'Mute';
@@ -28,7 +36,6 @@
   backgroundImage.src = 'solara_radio.png';
 
   // Audio context for fade control
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
   const beepFiles = ['radio_beep1.mp3', 'radio_beep2.mp3', 'radio_beep3.mp3'];
   let beepBuffers = [];
   let isMuted = false;
@@ -76,12 +83,6 @@
 
   ctx.fillRect(star.x, star.y, 2, 2);
 });
-    
-  function preloadBeepBuffers() {
-    Promise.all(beepFiles.map(loadAudioBuffer)).then(buffers => {
-      beepBuffers = buffers;
-  });
-}
 
   fallingStars.forEach(star => {
     star.x += star.speedX; // Move left
