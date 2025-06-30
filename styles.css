@@ -77,6 +77,7 @@ button {
   text-align: right;
 }
 
+#radio-widget-container .button-container button,
 #navigation-widget button {
   width: auto;           /* Let button size fit the text naturally */
   min-width: 50px;       /* Optional: minimum width to keep consistency */
