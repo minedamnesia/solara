@@ -3,6 +3,7 @@
   const ctx = canvas.getContext('2d');
   const container = document.getElementById('radio-widget-container');
   const toggleButton = document.getElementById('toggleAnimation');
+  let audioContext = null; // Don't create it immediately
 
   // Create Mute/Unmute button
   const muteButton = document.getElementById('muteButton');
@@ -75,6 +76,12 @@
 
   ctx.fillRect(star.x, star.y, 2, 2);
 });
+    
+  function preloadBeepBuffers() {
+    Promise.all(beepFiles.map(loadAudioBuffer)).then(buffers => {
+      beepBuffers = buffers;
+  });
+}
 
   fallingStars.forEach(star => {
     star.x += star.speedX; // Move left
@@ -133,18 +140,18 @@
     if (isAnimating) {
       radioWaves.push({ radius: 0, opacity: 0.5 });
 
-      if (!isMuted && beepBuffers.length > 0) {
+      if (!isMuted && beepBuffers.length > 0 && audioContext) {
         const randomIndex = Math.floor(Math.random() * beepBuffers.length);
         const beepSource = audioContext.createBufferSource();
         beepSource.buffer = beepBuffers[randomIndex];
-
+      
         const gainNode = audioContext.createGain();
         beepSource.connect(gainNode).connect(audioContext.destination);
-
+      
         // Fade out over 0.5 seconds
         gainNode.gain.setValueAtTime(1, audioContext.currentTime);
         gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-
+      
         beepSource.start();
       }
     }
@@ -152,10 +159,16 @@
 
   // Toggle animation button
   toggleButton.addEventListener('click', () => {
+  // Create AudioContext on first user gesture
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      preloadBeepBuffers();
+    }
+  
     isAnimating = !isAnimating;
     toggleButton.textContent = isAnimating ? 'Pause' : 'Resume';
     if (isAnimating) requestAnimationFrame(animate);
-  });
+});
 
   // Mute/unmute button
   muteButton.addEventListener('click', () => {
