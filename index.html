@@ -4,23 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radio Contact Widget Demo</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      overflow: hidden;
-    }
+  <link rel="stylesheet" href="styles.css">
 
-    canvas {
-      display: block;
-    }
-
-    button {
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-  </style>
 </head>
 <body>
 
@@ -35,19 +20,9 @@
 
   <canvas id="radioCanvas"></canvas>
 
-  <div style="
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    flex-direction: column; /* Stack vertically */
-    align-items: flex-end; /* Align buttons to the right */
-    gap: 6px;
-    z-index: 10;">
-    
-    <button id="toggleAnimation" style="width: 70px; padding: 4px 8px; font-size: 12px; background-color: #fff; border: none; cursor: pointer;">Pause</button>
-    <button id="muteButton" style="width: 70px; padding: 4px 8px; font-size: 12px; background-color: #fff; border: none; cursor: pointer;">Mute</button>
-  
+  <div class="button-container">
+    <button id="toggleAnimation">Pause</button>
+    <button id="muteButton">Mute</button>
   </div>
 
     <div id="navigation-widget" style="
