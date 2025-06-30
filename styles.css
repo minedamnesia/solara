@@ -12,16 +12,26 @@ canvas {
 }
 
 /* Button Styling */
+
 button {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 2px 6px;      /* Reduced padding for smaller buttons */
-  font-size: 11px;       /* Slightly smaller text */
-  background-color: #e0f4f1;  /* Soft light color from the radio highlights */
+  padding: 2px 6px;      /* Smaller, aligned buttons */
+  font-size: 11px;
+  background-color: #e0f4f1;
   border: none;
   cursor: pointer;
-  color: #0c1f2c; /* Deep blue text for contrast */
+  color: #0c1f2c;
+  width: 70px;           /* Uniform width */
 }
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
 
 #radio-widget-container .button-container button,
 #navigation-widget button {
