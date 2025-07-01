@@ -1,7 +1,8 @@
 /* Layout: Side by Side Widgets */
 body {
   display: flex;
-  align-items: flex-start; /* Align widgets at the top, no stretching */
+  align-items: flex-start; /* Align widgets at the top edge */
+  justify-content: flex-start;
   height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
@@ -10,13 +11,13 @@ body {
   gap: 20px; /* Space between widgets */
 }
 
-/* Shared Widget Styling */
+/* Matching Widget Styles */
 #radio-widget-container, #about-me-widget {
-  background-color: #0c1f2c; /* Matching widget backgrounds */
+  background-color: #0c1f2c;
   border: 2px solid #7fffd4; /* Aqua green border */
-  height: 450px; /* Fixed height for both widgets */
-  box-sizing: border-box; /* Padding included in height */
-  overflow: auto; /* Scroll if content overflows */
+  height: 450px; /* Fixed height */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent content from affecting size */
 }
 
 /* Radio Widget */
@@ -57,7 +58,8 @@ button {
 
 /* About Me Widget */
 #about-me-widget {
-  flex: 1; /* Fill remaining space */
+  width: calc(100% - 340px); /* Remaining space after radio widget and gap */
+  max-width: 1000px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -66,13 +68,13 @@ button {
 
 #about-me-widget h1 {
   font-size: 20px;
-  text-align: center; /* Center title */
+  text-align: center;
   margin-bottom: 20px;
 }
 
 .project-list {
   flex-grow: 1;
-  padding-left: 20px; /* Space between list and left edge */
+  padding-left: 20px; /* Space from left edge */
 }
 
 .project-item {
@@ -84,20 +86,20 @@ button {
 
 .project-item span {
   display: inline-block;
-  text-indent: 1.5em; /* Indent list items by approx. 3 spaces */
+  text-indent: 1.5em; /* Approx. 3-space indentation */
 }
 
 .project-item em {
   font-style: italic;
-  color: #8B4000; /* Rust color */
-  min-width: 90px;
+  color: #9CAF88; /* Sage green -
+  min-width: 90px; /* Align all Coming Soon labels */
   text-align: right;
 }
 
 /* Contact Section */
 .contact-section {
   font-size: 14px;
-  text-align: center; /* Centers all contact lines */
+  text-align: center; /* Center all contact text */
 }
 
 .contact-section h3 {
@@ -106,10 +108,9 @@ button {
 }
 
 .contact-section p {
-  text-indent: 0; /* Remove indent to fully center text */
-  margin: 5px 0; /* Optional: Add vertical spacing between lines */
+  text-indent: 0; /* Remove indentation for centered text */
+  margin: 5px 0;
 }
-
 
 /* Link Colors */
 .contact-section a:link {
