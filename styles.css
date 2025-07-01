@@ -97,7 +97,7 @@ button {
 /* Contact Section */
 .contact-section {
   font-size: 14px;
-  text-align: center;
+  text-align: center; /* Centers all contact lines */
 }
 
 .contact-section h3 {
@@ -106,8 +106,10 @@ button {
 }
 
 .contact-section p {
-  text-indent: 1.5em; /* Indent contact lines */
+  text-indent: 0; /* Remove indent to fully center text */
+  margin: 5px 0; /* Optional: Add vertical spacing between lines */
 }
+
 
 /* Link Colors */
 .contact-section a:link {
