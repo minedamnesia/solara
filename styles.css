@@ -89,8 +89,8 @@ button {
 
 .project-item em {
   font-style: italic;
-  color: #7fffd4;
-  min-width: 90px; /* Even Coming Soon alignment */
+  color: #8B4000; /* Rust color */
+  min-width: 90px;
   text-align: right;
 }
 
