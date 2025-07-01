@@ -1,93 +1,96 @@
-/* General Page Styling */
+/* Layout: Side by Side Widgets */
 body {
+  display: flex;
+  height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #0c1f2c; /* Deep space blue from the image */
-  overflow: hidden;
+  background-color: #0c1f2c;
+  color: white;
 }
 
-/* Canvas Styling */
-canvas {
-  display: block;
-}
-
-/* Button Styling */
-
-button {
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  padding: 2px 6px;      /* Smaller, aligned buttons */
-  font-size: 11px;
-  background-color: #e0f4f1;
-  border: none;
-  cursor: pointer;
-  color: #0c1f2c;
-  width: 70px;           /* Uniform width */
-}
-
-.button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-}
-
-
-#radio-widget-container .button-container button,
-#navigation-widget button {
-  width: auto;           /* Let button size fit the text naturally */
-  min-width: 50px;       /* Optional: minimum width to keep consistency */
-}
-
-
-/* Main Widget Container */
+/* Radio Widget Styles */
 #radio-widget-container {
   position: relative;
   width: min(300px, 40vw);
   max-width: 300px;
-  max-height: 450px; /* 2:3 aspect ratio */
+  max-height: 450px;
   aspect-ratio: 2 / 3;
   overflow: hidden;
-  border: 2px solid #7fffd4; /* Aqua green from image highlights */
+  border: 2px solid #7fffd4;
+  margin: 20px;
 }
 
-/* Button Container Styling (Stacked Buttons) */
-#radio-widget-container .button-container {
+canvas {
+  display: block;
+}
+
+.button-container {
   position: absolute;
   top: 10px;
   right: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 6px;
-  z-index: 10;
+  gap: 4px;
 }
 
-/* Navigation Widget */
-#navigation-widget {
-  position: absolute;
-  top: 10px;
-  right: 320px; /* Adjust as needed */
+button {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 2px 6px;
+  font-size: 11px;
+  background-color: #e0f4f1;
+  border: none;
+  cursor: pointer;
+  color: #0c1f2c;
+  width: 70px;
+}
+
+/* About Me Widget */
+#about-me-widget {
+  flex: 1; /* Takes up remaining space */
+  padding: 20px;
+  background-color: #102535; /* Slight contrast with body background */
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 8px;
-  z-index: 20;
-  width: 150px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
 }
 
-#navigation-widget h3 {
-  color: #ffffff;
-  font-size: 16px;
-  margin: 0 0 8px 0;
-  text-align: right;
+#about-me-widget h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-#radio-widget-container .button-container button,
-#navigation-widget button {
-  width: 50px; /* Or smaller if desired */
+.project-list {
+  flex-grow: 1;
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.project-item em {
+  font-style: italic;
+  color: #7fffd4;
+}
+
+.contact-section {
+  font-size: 14px;
+}
+
+.contact-section h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.contact-section a {
+  color: #7fffd4;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
 }
