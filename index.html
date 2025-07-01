@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radio Contact Widget Demo</title>
   <link rel="stylesheet" href="styles.css">
-
 </head>
-<body>
 
-  <div id="radio-widget-container" style="
-      position: relative;
-      width: min(300px, 40vw);
-      max-width: 300px;
-      max-height: 450px; /* 2:3 ratio of 300px width */
-      aspect-ratio: 2 / 3;
-      overflow: hidden;
-      border: 2px solid white;">
+<body style="display: flex; height: 100vh; margin: 0;">
 
-  <canvas id="radioCanvas"></canvas>
-
-  <div class="button-container">
-    <button id="toggleAnimation">Pause</button>
-    <button id="muteButton">Mute</button>
-  </div>
-    
-  </div>
-  
-  <div id="navigation-widget">
-    <h3>Menu</h3>
-    <button>Home</button>
-    <button>About</button>
-    <button>Gallery</button>
-    <button>Contact</button>
-    <button>Help</button>
+  <!-- Left Widget (Radio) -->
+  <div id="radio-widget-container">
+    <canvas id="radioCanvas"></canvas>
+    <div class="button-container">
+      <button id="toggleAnimation">Pause</button>
+      <button id="muteButton">Mute</button>
+    </div>
   </div>
 
-<script src="radio-widget.js"></script>
+  <!-- Right Widget (About Me) -->
+  <div id="about-me-widget">
+    <h1>About Me</h1>
+
+    <div class="project-list">
+      <div class="project-item">
+        <span>Solara Radio Project</span>
+        <em>Coming Soon</em>
+      </div>
+      <div class="project-item">
+        <span>Ionospheric Data Monitoring Dashboard</span>
+        <em>Coming Soon</em>
+      </div>
+      <div class="project-item">
+        <span>Space Cowgirl Spotify Mixes</span>
+        <em>Coming Soon</em>
+      </div>
+      <div class="project-item">
+        <span>AI Radio Propagation Predictor</span>
+        <em>Coming Soon</em>
+      </div>
+      <div class="project-item">
+        <span>Project Ideas</span>
+        <em>Coming Soon</em>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <h3>Contact Me</h3>
+      <p>Kelly Simer</p>
+      <p><a href="mailto:kellyjsimer@gmail.com">kellyjsimer@gmail.com</a></p>
+      <p>
+        <a href="https://www.linkedin.com/in/kelly-simer/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 16px; vertical-align: middle; margin-right: 4px;">
+          via LinkedIn
+        </a>
+        / <a href="https://www.qrz.com/db/KK7QEA" target="_blank">via QRZ.com</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="radio-widget.js"></script>
 
 </body>
-</html>
 
+</html>
