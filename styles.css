@@ -1,21 +1,22 @@
+/* Layout: Side by Side Widgets */
 body {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start; /* Align widgets at the top, no stretching */
   height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #0c1f2c;
-  color: #9CAF88;
-  gap: 20px;
+  background-color: #0c1f2c; /* Deep space blue */
+  color: #9CAF88; /* Sage green text */
+  gap: 20px; /* Space between widgets */
 }
 
-/* Matching widget heights and backgrounds */
+/* Shared Widget Styling */
 #radio-widget-container, #about-me-widget {
-  background-color: #0c1f2c;
-  border: 2px solid #7fffd4;
-  height: 450px; /* Fixed height */
-  box-sizing: border-box;
-  overflow: auto; /* Add scroll if needed */
+  background-color: #0c1f2c; /* Matching widget backgrounds */
+  border: 2px solid #7fffd4; /* Aqua green border */
+  height: 450px; /* Fixed height for both widgets */
+  box-sizing: border-box; /* Padding included in height */
+  overflow: auto; /* Scroll if content overflows */
 }
 
 /* Radio Widget */
@@ -56,7 +57,7 @@ button {
 
 /* About Me Widget */
 #about-me-widget {
-  flex: 1;
+  flex: 1; /* Fill remaining space */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -65,13 +66,63 @@ button {
 
 #about-me-widget h1 {
   font-size: 20px;
-  text-align: center;
+  text-align: center; /* Center title */
   margin-bottom: 20px;
 }
 
 .project-list {
   flex-grow: 1;
-  padding-left: 20px;
+  padding-left: 20px; /* Space between list and left edge */
 }
 
 .project-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.project-item span {
+  display: inline-block;
+  text-indent: 1.5em; /* Indent list items by approx. 3 spaces */
+}
+
+.project-item em {
+  font-style: italic;
+  color: #7fffd4;
+  min-width: 90px; /* Even Coming Soon alignment */
+  text-align: right;
+}
+
+/* Contact Section */
+.contact-section {
+  font-size: 14px;
+  text-align: center;
+}
+
+.contact-section h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.contact-section p {
+  text-indent: 1.5em; /* Indent contact lines */
+}
+
+/* Link Colors */
+.contact-section a:link {
+  color: #9CAF88; /* Sage green - unclicked */
+  text-decoration: none;
+}
+
+.contact-section a:visited {
+  color: #654321; /* Brown - visited */
+}
+
+.contact-section a:active {
+  color: #8B4000; /* Rust - being clicked */
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
