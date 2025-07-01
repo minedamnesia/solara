@@ -1,18 +1,18 @@
-/* General Layout */
 body {
   display: flex;
   height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #0c1f2c; /* Deep space blue from the image */
+  background-color: #0c1f2c;
   color: #9CAF88; /* Sage green text */
-  gap: 20px; /* Padding between the two widgets */
+  gap: 20px;
 }
 
-/* Shared Widget Background */
+/* Matching widget heights and backgrounds */
 #radio-widget-container, #about-me-widget {
-  background-color: #0c1f2c; /* Matching widget backgrounds */
-  border: 2px solid #7fffd4; /* Aqua green border */
+  background-color: #0c1f2c;
+  border: 2px solid #7fffd4;
+  height: max(450px, 60vh);
 }
 
 /* Radio Widget */
@@ -20,7 +20,6 @@ body {
   position: relative;
   width: min(300px, 40vw);
   max-width: 300px;
-  max-height: 450px;
   aspect-ratio: 2 / 3;
   overflow: hidden;
   margin: 20px;
@@ -35,3 +34,41 @@ canvas {
   top: 10px;
   right: 10px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+button {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 2px 6px;
+  font-size: 11px;
+  background-color: #e0f4f1;
+  border: none;
+  cursor: pointer;
+  color: #0c1f2c;
+  width: 80px;
+}
+
+/* About Me Widget */
+#about-me-widget {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#about-me-widget h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project-list {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.project-item {
