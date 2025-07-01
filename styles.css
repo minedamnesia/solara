@@ -8,14 +8,14 @@ body {
   padding: 20px; /* Add uniform padding to the whole layout */
   font-family: Arial, sans-serif;
   background-color: #0c1f2c; /* Deep space blue */
-  color: #9CAF88; /* Sage green text */
+  color: #A0AA7F; /* Sage green text */
   gap: 20px; /* Space between widgets */
 }
 
 /* Matching Widget Styles */
 #radio-widget-container, #about-me-widget {
   background-color: #0c1f2c;
-  border: 2px solid #7fffd4; /* Aqua green border */
+  border: 2px solid #D0AF87; /* Tan border */
   height: 450px; /* Fixed height for both widgets */
   box-sizing: border-box;
   overflow: hidden; /* Prevent content from affecting size */
@@ -92,7 +92,7 @@ button {
 
 .project-item em {
   font-style: italic;
-  color: #8B4000; /* Rust color for Coming Soon */
+  color: #755847; /* Coffee color for Coming Soon */
   min-width: 90px; /* Align all Coming Soon labels */
   text-align: right;
 }
@@ -115,16 +115,16 @@ button {
 
 /* Link Colors */
 .contact-section a:link {
-  color: #9CAF88; /* Sage green - unclicked */
+  color: #A0AA7F; /* Sage green - unclicked */
   text-decoration: none;
 }
 
 .contact-section a:visited {
-  color: #654321; /* Brown - visited */
+  color: #755847; /* coffee - visited */
 }
 
 .contact-section a:active {
-  color: #8B4000; /* Rust - being clicked */
+  color: #EC9860; /* Persian orange - being clicked */
 }
 
 .contact-section a:hover {
