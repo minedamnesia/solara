@@ -5,6 +5,7 @@ body {
   justify-content: flex-start;
   height: 100vh;
   margin: 0;
+  padding: 20px; /* Add uniform padding to the whole layout */
   font-family: Arial, sans-serif;
   background-color: #0c1f2c; /* Deep space blue */
   color: #9CAF88; /* Sage green text */
@@ -15,7 +16,7 @@ body {
 #radio-widget-container, #about-me-widget {
   background-color: #0c1f2c;
   border: 2px solid #7fffd4; /* Aqua green border */
-  height: 450px; /* Fixed height */
+  height: 450px; /* Fixed height for both widgets */
   box-sizing: border-box;
   overflow: hidden; /* Prevent content from affecting size */
 }
@@ -27,7 +28,7 @@ body {
   max-width: 300px;
   aspect-ratio: 2 / 3;
   overflow: hidden;
-  margin: 20px;
+  /* Removed margin to align with About Me widget */
 }
 
 canvas {
@@ -91,7 +92,7 @@ button {
 
 .project-item em {
   font-style: italic;
-  color: #9CAF88; /* Sage green -
+  color: #8B4000; /* Rust color for Coming Soon */
   min-width: 90px; /* Align all Coming Soon labels */
   text-align: right;
 }
