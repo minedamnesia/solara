@@ -70,7 +70,7 @@ button {
 #about-me-widget h1 {
   font-size: 20px;
   text-align: center;
-  font-color: #D0AF87;
+  color: #D0AF87;
   margin-bottom: 20px;
 }
 
@@ -106,7 +106,7 @@ button {
 
 .contact-section h3 {
   font-size: 16px;
-  font-color: #D0AF87;
+  color: #D0AF87;
   margin-bottom: 5px;
 }
 
