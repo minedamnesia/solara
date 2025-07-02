@@ -70,7 +70,7 @@ button {
 #about-me-widget h1 {
   font-size: 20px;
   text-align: center;
-  color: #D0AF87;
+  color: #A0AA7F;
   margin-bottom: 20px;
 }
 
@@ -88,6 +88,7 @@ button {
 
 .project-item span {
   display: inline-block;
+  color: #D0AF87;
   text-indent: 1.5em; /* Approx. 3-space indentation */
 }
 
@@ -106,12 +107,13 @@ button {
 
 .contact-section h3 {
   font-size: 16px;
-  color: #D0AF87;
+  color: #A0AA7F;
   margin-bottom: 5px;
 }
 
 .contact-section p {
   text-indent: 0; /* Remove indentation for centered text */
+  color: #D0AF87;
   margin: 5px 0;
 }
 
