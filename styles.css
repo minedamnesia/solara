@@ -99,6 +99,20 @@ button {
   text-align: right;
 }
 
+.project-item a {
+  color: #755847;
+  text-decoration: none;
+}
+
+.project-item a:hover {
+  color: #0c1f2c;
+}
+
+.project-item a:active {
+  color: #A0AA7F;
+}
+
+
 /* Contact Section */
 .contact-section {
   font-size: 14px;
